@@ -1,0 +1,104 @@
+<div class="container">
+  <form #myfrm>
+    <!-- <div class="form-group">
+      <label for="eid">Employee ID:</label>
+      <input type="text" class="form-control" placeholder="Enter employeeID" name="eid" #eid>
+    </div> -->
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="ename">Employee Name:</label>
+          <input type="text" class="form-control" placeholder="Enter Employee Name" name="ename" #ename>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="DOB">Date:</label>
+          <input type="date" class="form-control" placeholder="Enter DOB" name="dob" #dob>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" class="form-control" placeholder="Enter Address" name="address" #address>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="role">Role:</label>
+          <input type="text" class="form-control" placeholder="Enter Role" name="role" #role>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="salary">Salary:</label>
+          <input type="number" class="form-control" placeholder="Enter salary" name="salary" #salary>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="experience">Experience:</label>
+          <input type="number" class="form-control" placeholder="Enter Experience" name="experience" #experience>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-info" (click)="BtnSubmit(ename.value,dob.value,address.value,role.value,salary.value,experience.value)">Add</button>
+  </form>
+</div>
+<button type="submit" class="btn btn-info" (click)="BtnShow()">ShowAll</button>
+
+<div >
+
+  <div class="table stripped">
+    <tr>
+      <th>
+        ID
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        DOB
+      </th>
+      <th>
+        Address
+      </th>
+      <th>
+        Role
+      </th>
+      <th>
+        Salary
+      </th>
+      <th>
+        Experience
+      </th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let std of em2">
+      <td>{{std.id}}</td>
+      <td>{{std.ename}}</td>
+      <td>{{std.dob}}</td>
+      <td>{{std.address}}</td>
+      <td>{{std.role}}</td>
+      <td>{{std.salary}}</td>
+      <td>{{std.experience}}</td>
+      <td>
+        <button type="submit" class="btn btn-info" (click)="Btnchange(std.id)">Edit</button>
+        <button type="submit" class="btn btn-info" (click)="Deletebtn(std.id)">Delete</button>
+
+      </td>
+    </tr>
+  </div>
+
+
+</div>

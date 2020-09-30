@@ -1,0 +1,56 @@
+<app-empdetails (empid)='btnChange($event)'></app-empdetails>
+
+<div *ngIf='flag==true'>
+   <div class="table stripped">
+    <tr>
+      <th>
+        Id
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        DOB
+      </th>
+      <th>
+        Address
+      </th>
+      <th>
+        Role
+      </th>
+      <th>
+        Salary
+      </th>
+      <th>
+        Experience
+      </th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>{{em.id}}</td>
+      <td>
+        <input type="text"  [value]=em.ename class="form-control" #ename>
+      </td>
+      <td>
+        <input type="date" [value]=em.dob class="form-control" #dob>
+      </td>
+      <td>
+        <input type="text" [value]=em.address class="form-control" #address>
+      </td>
+      <td>
+        <input type="text" [value]=em.role class="form-control" #role>
+      </td>
+      <td>
+        <input type="number" [value]=em.salary class="form-control" #salary>
+      </td>
+      <td>
+        <input type="number" [value]=em.experience class="form-control" #experience>
+      </td>
+      <td>
+        <button class="btn btn-info" (click)="subclick(ename,dob,address,role,salary,experience)">submit</button>
+      </td>
+    </tr>
+  </div>
+
+
+</div>
